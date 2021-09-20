@@ -1,0 +1,10 @@
+#DOS / Powershell Code to Deploy to Docker
+cd <file_path>\Docker_NHSRCommunity\Rocker_Deployment_R
+echo "Let's Examine the structure"
+dir or ls linux
+echo "Let's build the docker build"
+docker build -t nhsr-docker-api .
+echo "Let's run our stranded build"
+docker run -p 80:80 nhsr-docker-api
+echo "Stopping our service"
+docker stop nhsr-docker-api

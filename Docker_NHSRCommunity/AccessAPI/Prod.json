@@ -1,0 +1,11 @@
+{
+  "age": 52,
+  "care_home_ref_flag": 1,
+  "medically_safe_flag": 0,
+  "hcop_flag": 1,
+  "needs_mental_health_support_flag": 0,
+  "previous_care_in_last_12_month": 1,
+  "frail.Activity_Limitation": 0,
+  "frail.Fall_patient_history": 1,
+  "frail.Mobility_problems": 0
+}

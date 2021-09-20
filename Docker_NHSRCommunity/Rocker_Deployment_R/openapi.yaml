@@ -1,0 +1,69 @@
+openapi: "3.0.3"
+servers:
+  description: Localhost
+  url: http://127.0.0.1:80
+info:
+  description: API Description
+  version: "1.0.0"
+  title: Stranded Patient Prediction
+  contact:
+    email: "g.hutson@nhs.net"
+paths:
+  /connection-status:
+    get:
+      summary: 'Checks that our API service is running'
+      responses:
+        default:
+          description: Default response.
+  /predict:
+    post:
+      summary: 'Predict stranded patients based on input JSON'
+      responses:
+        default:
+          description: Default response.
+      parameters: []
+      requestBody:
+        description: Stranded Patient Data
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                age:
+                  type: number
+                  title: Stranded Patient age
+                  example: 52
+                care_home_ref_flag:
+                  type: number
+                  title: Stranded Patient Care Home Referral Flag
+                  example: 1
+                medically_safe_flag:
+                  type: number
+                  title: Stranded Patient Medically Safe Flag
+                  example: 0
+                hcop_flag:
+                  type: number
+                  title: Stranded Patient Health Care for Older People
+                  example: 1
+                needs_mental_health_support_flag:
+                  type: number
+                  title: Stranded Patient needing mental health support
+                  example: 0
+                previous_care_in_last_12_month:
+                  type: number
+                  title: Stranded patient has had care previously
+                  example: 1
+                frail.Activity_Limitation:
+                  type: number
+                  title: Stranded patient is frail and has activity limitations
+                  example: 0
+                frail.Fall_patient_history:
+                  type: number
+                  title: Stranded patient has had history of falling
+                  example: 1
+                frail.Mobility_problems:
+                  type: number
+                  title: Stranded patient has mobility issues
+                  example: 0
+            
