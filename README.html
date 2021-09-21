@@ -419,7 +419,7 @@ summary {
 <p>This is a tutorial on how to use <code>Docker desktop</code> to deploy a trained machine learning model. There are many other use cases for Docker i.e. deployment of Shiny apps to docker containers, website deployment, web service deployment, database deployment or full scale application deployment.</p>
 <p>The session was part of the <a href="https://nhsrcommunity.com/events/nhs-r-community-show-and-tell-r-in-production/">NHS-R communities’ workshop</a>.</p>
 <p>My tutorial will focus on the following:</p>
-<ul>
+<ol style="list-style-type: decimal">
 <li>Introduction to Docker</li>
 <li>Docker Desktop</li>
 <li>Training ML Model, Serialise ML model and deploy to Docker container</li>
@@ -427,15 +427,32 @@ summary {
 <li>Use CMD to interact with the service (Windows focus)</li>
 <li>Expose Swagger APU and use R to connect to API and send predictions to the trained ML model</li>
 <li>Interface with our API using httr and JSONlite</li>
-</ul>
+</ol>
 <div id="links-to-the-tutorial-content" class="section level2">
 <h2>Links to the tutorial content</h2>
 <p>The following links send you straight to the content:</p>
 <ul>
 <li><a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/NHS_R_Community_Docker_Presentation.pdf">Presentation from the day</a></li>
 <li><a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/MLModelTrainingScript.R">ML Model training script</a> - this trains a model in caret and serialises it to the model folder in the Rocker_Deployment_R folder</li>
-<li><a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/tree/main/Docker_NHSRCommunity/Rocker_Deployment_R">Rocker Deployment Folder</a> - this contains all the code needed to create the Docker image such as our <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/Rocker_Deployment_R/PlumbStranded.R">PlumbeR end point</a> scripts, our GET and POST functions in <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/Rocker_Deployment_R/StrandedPlumberAPIHC.R">StrandedPlumberAPIHC.R</a>, the <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/Rocker_Deployment_R/openapi.yaml">Open API YAML file</a> needed for setting up the structure of the <a href="http://127.0.0.1/__docs__/">Swagger endpoint</a>, the serialised model (tb_model.rds) and the most important Dockerfile.</li>
+<li><a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/tree/main/Docker_NHSRCommunity/Rocker_Deployment_R">Rocker Deployment Folder</a> - this contains all the code needed to create the Docker image such as our <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/Rocker_Deployment_R/PlumbStranded.R">PlumbeR end point</a> scripts, our GET and POST functions in <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/Rocker_Deployment_R/StrandedPlumberAPIHC.R">StrandedPlumberAPIHC.R</a>, the <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/Rocker_Deployment_R/openapi.yaml">Open API YAML file</a> needed for setting up the structure of the <a href="http://127.0.0.1/__docs__/">Swagger endpoint</a>, the <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/Rocker_Deployment_R/tb_model.rds">serialised model (tb_model.rds)</a> and the most important <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/Rocker_Deployment_R/Dockerfile">Dockerfile</a>.</li>
+<li><a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/DOS_Code.txt">Using Powershell to deploy model</a> - this shows how to use command line to deploy the model in a couple of easy steps</li>
+<li><a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/tree/main/Docker_NHSRCommunity/AccessAPI">Accessing our API once deployed</a> - this folder contains a script that takes unseen take, these are patients the model was not trained on, and uses our API to fetch the trained model, pass the unseen data through the model, the model spits out results and then these are bound back to the production data as probability estimates and class labels. It also converts a data frame into a <a href="https://github.com/StatsGary/NHS_R_Community_Intro_to_Docker/blob/main/Docker_NHSRCommunity/AccessAPI/Prod.json">JSON object</a> and uses this object to pass to the API. The API returns JSON and then it converts it back to a data.frame. A bit of R and JSON magic!</li>
 </ul>
+</div>
+<div id="want-to-follow-along-on-youtube" class="section level2">
+<h2>Want to follow along on YouTube?</h2>
+<p>This tutorial originally appeared on my YouTube channel. The links to the relevant videos and blogs are below:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=WMCkV_J5a0s">Deploying a CARET Machine Learning model as an API with PlumbeR</a> - this shows how to create the ML model, swagger endpoint, create the end point files needed and the OpenAPI.yaml file</li>
+<li><a href="https://www.youtube.com/watch?v=PtD5hgHM-DY">Creating a classification model from scratch with TidyModels</a> - this shows an alternate approach to it, instead of CARET replace with TidyModels.</li>
+<li><a href="https://www.youtube.com/watch?v=9zcUlgLySZo&amp;list=PL37zlCA8GQdo-mObS7U6ViJduy9CyC5aI&amp;index=15&amp;t=322s">Assessing classification model with ConfusionTableR and outputting matrix to database</a> - this will show you how to use the Confusion Matrix object of R and then beable to store the results into a database with ConfusionTableR.</li>
+<li><a href="https://www.youtube.com/watch?v=JK6VLAKRjO4">Deploying our model to Docker</a> - this steps you through how to create the Docker file, get everything in a docker folder for deployment, deploy to Docker with Powershell / CMD and then to consume the endpoint with swagger and JSON - making the model platform agnostic.</li>
+<li><a href="https://hutsons-hacks.info/deploying-trained-caret-machine-learning-model-with-docker-and-plumber">Full article taking you through model training and deploying our model to Docker</a> - this is a link to the full article on my website.</li>
+</ul>
+</div>
+<div id="need-help-with-putting-your-model-into-production" class="section level2">
+<h2>Need help with putting your model into production?</h2>
+<p>I have been doing lots with MLOps recently and have some practical tips for scaling the model up beyond this fully open-source solution, so please drop me a line if you want any help?</p>
 </div>
 </div>
 
