@@ -34,6 +34,7 @@ This tutorial originally appeared on my YouTube channel. The links to the releva
 * [Creating a classification model from scratch with TidyModels](https://www.youtube.com/watch?v=PtD5hgHM-DY) - this shows an alternate approach to it, instead of CARET replace with TidyModels.
 * [Assessing classification model with ConfusionTableR and outputting matrix to database](https://www.youtube.com/watch?v=9zcUlgLySZo&list=PL37zlCA8GQdo-mObS7U6ViJduy9CyC5aI&index=15&t=322s) - this will show you how to use the Confusion Matrix object of R and then beable to store the results into a database with ConfusionTableR. 
 * [Deploying our model to Docker](https://www.youtube.com/watch?v=JK6VLAKRjO4) - this steps you through how to create the Docker file, get everything in a docker folder for deployment, deploy to Docker with Powershell / CMD and then to consume the endpoint with swagger and JSON - making the model platform agnostic.
+* [Accessing API and making predictions](https://www.youtube.com/watch?v=2OFtMtYyVsw) - this will show you how to use the Swagger API to make predictions on production / unseen data and return the results back to R in JSON. Then we convert the JSON and push it back out. 
 * [Full article taking you through model training and deploying our model to Docker](https://hutsons-hacks.info/deploying-trained-caret-machine-learning-model-with-docker-and-plumber) - this is a link to the full article on my website.
 
 
